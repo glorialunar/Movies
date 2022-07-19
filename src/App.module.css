@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Erica+One);
+
+.title{
+    text-align: center;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073,
+    0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    font-size: 3rem;
+}
+
+.title:hover{
+    cursor:pointer;
+    transform: scale(2); /* This adds a hover effect */
+    transition: transform .2s cubic-bezier(0, 0.75, 0, 1);
+}
+
+.title:active{
+    text-shadow: none;
+}
+
+.title:focus{
+    outline: none;
+}
+
