@@ -26,6 +26,7 @@ export function Search() {
             <div className={styles.searchBox}>
                 <input 
                     className={styles.searchInput} 
+                    placeholder="Title"
                     type="text"
                     value={searchText}
                     onChange={(e) => setSearchText(e.target.value)} 

@@ -10,7 +10,9 @@
 .searchInput{
     height: 30px;
     border-radius: 10px;
+    font-size: 1.2rem;
     padding: 5px 30px 5px 10px;
+    border: 1px solid white;
 }
 
 .searchButton{
@@ -21,4 +23,11 @@
     height: 100%;
     border: none;
     background: none;
+}
+
+.searchInput:focus,
+.searchButton:focus {
+    outline: none;
+    border: 1px solid #f88ec2;
+    box-shadow: 0 0 5px #ebbed4;
 }
