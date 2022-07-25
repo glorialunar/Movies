@@ -26,6 +26,7 @@ export function Search() {
                 <input 
                     className={styles.searchInput} 
                     placeholder="Title"
+                    aria-label="Search Movies"
                     type="text"
                     value={search}
                     onChange={(e) => {
