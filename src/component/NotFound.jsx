@@ -1,5 +1,5 @@
 import styles from "./NotFound.module.css";
-import notFound from "../img/error.png";
+import notFound from "../img/notFound.png";
 
 export function NotFound() {
     return (
