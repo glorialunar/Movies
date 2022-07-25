@@ -14,7 +14,7 @@ export function App(){
             <header>
                 <Link to="/">
                     <h1 className={styles.title}>
-                        Movies
+                        Movies🍿
                     </h1>
                 </Link> 
             </header>
