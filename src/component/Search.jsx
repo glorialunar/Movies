@@ -28,7 +28,7 @@ export function Search() {
                     placeholder="Title"
                     aria-label="Search Movies"
                     type="text"
-                    value={search}
+                    value={searchText}
                     onChange={(e) => {
                         const value = e.target.value;
                         setSearchText(value);
