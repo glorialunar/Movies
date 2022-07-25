@@ -18,7 +18,6 @@ export function Search() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate('/?search=' + searchText);
     }
 
     return (
@@ -28,8 +27,12 @@ export function Search() {
                     className={styles.searchInput} 
                     placeholder="Title"
                     type="text"
-                    value={searchText}
-                    onChange={(e) => setSearchText(e.target.value)} 
+                    value={search}
+                    onChange={(e) => {
+                        const value = e.target.value;
+                        setSearchText(value);
+                        navigate('/?search=' + value);
+                    }} 
                 />
                 <button className={styles.searchButton} type="submit">
                     <GoSearch size={20} />

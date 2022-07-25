@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Spinner } from "../component/Spinner";
+import { getMovieImg } from "../utils/getMovieImg";
 import { httpGet } from "../utils/httpClient";
 import styles from "./MovieDetails.module.css";
 
@@ -23,8 +24,7 @@ export function MovieDetails(){
         return <Spinner/>
     }
 
-
-    const imageURL = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
+    const imageURL = getMovieImg(movie.poster_path, 300);
 
     return (
         <div className={styles.detailsContainer}>
