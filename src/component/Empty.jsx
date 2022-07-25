@@ -1,5 +1,5 @@
 import styles from "./Empty.module.css";
-import noResults from "../noResults.png";
+import noResults from "../img/noResults.png";
 
 export function Empty(path, width) {
     return (
