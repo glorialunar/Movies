@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import styles from "./component/App.module.css";
 import { MovieDetails } from "./pages/MovieDetails";
+import { NotFound } from "./component/NotFound";
 
 
 export function App(){
@@ -21,9 +22,9 @@ export function App(){
 
             <main>
                 <Routes>
+                    <Route path="/movies/:movieId" element={<MovieDetails/>} />
                     <Route path="/" element={<LandingPage/>} />
-
-                    <Route exact path="/movies/:movieId" element={<MovieDetails/>} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </main> 
         </div>  

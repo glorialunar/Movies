@@ -1,19 +1,19 @@
 import styles from "./Search.module.css";
 import { GoSearch } from 'react-icons/go';
 import { useEffect, useState } from "react";
-import { useNavigate  } from "react-router-dom";
-import { useQuery } from "../hooks/useQuery";
+import { useNavigate, useSearchParams  } from "react-router-dom";
 
 export function Search() {
-    const query = useQuery();
+    const [query, setQuery] = useSearchParams();
     const search = query.get("search");
-    const [searchText, setSearchText] = useState("");
     const navigate = useNavigate();
 
+    // const [searchText, setSearchText] = useState("");
+
     //Este hook va a permitir que se "limpie" el input luego de hacer una búsqueda y regresar a Home. Search, cuando no hay nada en la query, es null y el value del input nunca puede ser null. Es por eso que se implementa el || ""
-    useEffect(() => {
-        setSearchText(search || "");
-    }, [search]);
+    // useEffect(() => {
+    //     setSearchText(search || "");
+    // }, [search]);
 
 
     const handleSubmit = (e) => {
@@ -28,11 +28,12 @@ export function Search() {
                     placeholder="Title"
                     aria-label="Search Movies"
                     type="text"
-                    value={searchText}
+                    value={search ?? ""}
+                    autoFocus
                     onChange={(e) => {
                         const value = e.target.value;
-                        setSearchText(value);
-                        navigate('/?search=' + value);
+                        setQuery({search:value})
+                        // navigate('/?search=' + value);
                     }} 
                 />
                 <button className={styles.searchButton} type="submit">
